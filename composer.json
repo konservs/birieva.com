@@ -1,0 +1,11 @@
+{
+"require":
+	{
+	"konservs/brilliant.framework": "dev-master"
+	},
+"autoload": {
+	"psr-4": {
+		"Application\\": "application/libraries/"
+		}
+	}
+}
