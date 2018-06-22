@@ -24,6 +24,21 @@ $menuActive = 'home';
 <html class="no-js"  lang="en">
 <head>
 	<?php $bhtml->out_head();?>
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+ 	<script src="/js/assets/modernizr-2.8.3.min.js" type="text/javascript"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120274726-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-120274726-1');
+	</script>
 </head>
 <body lang="<?php echo(BLang::$langcode_web) ?>" itemscope itemtype="http://schema.org/WebPage">
 	<!-- header -->
@@ -107,12 +122,22 @@ $menuActive = 'home';
 <?php
 //© Olha Birieva
 ?>
-	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/assets/jquery.min.js"><\/script>')</script>
-	<script src="js/assets/plugins.js" type="text/javascript"></script>
-	<script src="js/assets/bootstrap.min.js" type="text/javascript"></script>
-	<script src="js/main.js" type="text/javascript"></script>
-	<script src="js/jquery.nicescroll.min.js" type="text/javascript"></script>	
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> 
+<script>window.jQuery || document.write('<script src="js/assets/jquery.min.js"><\/script>')</script> 
+<script src="js/assets/plugins.js" type="text/javascript"></script> 
+<script src="js/assets/bootstrap.min.js" type="text/javascript"></script> 
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> 
+<script src="js/maps.js" type="text/javascript"></script> 
+<script src="js/custom.js" type="text/javascript"></script> 
+<script src="js/jquery.contact.js" type="text/javascript"></script> 
+<script src="js/main.js" type="text/javascript"></script> 
+<script src="js/gallery/masonry.pkgd.min.js" type="text/javascript"></script> 
+<script src="js/gallery/imagesloaded.pkgd.min.js" type="text/javascript"></script> 
+<script src="js/gallery/jquery.infinitescroll.min.js" type="text/javascript"></script> 
+<script src="js/gallery/main.js" type="text/javascript"></script> 
+<script src="js/jquery.nicescroll.min.js" type="text/javascript"></script>
 </body>
 </html>
