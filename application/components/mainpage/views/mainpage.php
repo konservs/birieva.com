@@ -4,16 +4,26 @@ use \Brilliant\CMS\BLang;
 
 class View_mainpage_mainpage extends \Brilliant\MVC\BView{
 	/**
-	 *
+	 * Generate HTML and some headers.
 	 */
 	public function generate($data = NULL){
 		$lang=BLang::$langcode;
 		//Set headers
-		$this->setTitle(BLang::_('COM_MAINPAGE_TITLE'));
-		$this->addMeta('description',COM_MAINPAGE_METADESC_UA);
-		$this->addMeta('keywords',COM_MAINPAGE_METAKEYW_UA);
 		$this->items = $data->items;
-		//no html for mainpage!
+		$this->rootCategory = $data->rootCategory;
+		//Try to generate the title
+		$title = $this->rootCategory->title;
+		if(empty($title)){
+			$title = $this->rootCategory->name;
+			}
+		$this->setTitle($title);
+		//Try to generate the META description
+		$metadesc = $this->rootCategory->metadesc;
+		$this->addMeta('description', $metadesc);
+		//Try to generate the META keywords
+		$metakeyw = $this->rootCategory->metakeyw;
+		$this->addMeta('keywords', $metakeyw);
+		//Cache (if the cache is enabled) and return HTML!
 		$this->setcache(true,3600);//Cache for 1 hour
 		return $this->templateLoad();
 		}

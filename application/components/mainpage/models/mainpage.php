@@ -13,6 +13,7 @@ class Model_mainpage_mainpage extends \Brilliant\MVC\BModel{
 	public function getData($segments){
 		$data=new stdClass;
 		$bPortfolioCategories = Categories::getInstance();
+		$data->rootCategory = $bPortfolioCategories->itemGet(1);
 		$data->items = $bPortfolioCategories->itemsFilter(['parent' => 1]);
 		return $data;
 		}
