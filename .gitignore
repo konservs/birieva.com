@@ -1,2 +1,5 @@
 /vendor
 /composer.lock
+/config/config.php
+/images/gallery/*.jpg
+*.tmp

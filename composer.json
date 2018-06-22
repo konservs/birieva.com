@@ -1,7 +1,8 @@
 {
 "require":
 	{
-	"konservs/brilliant.framework": "dev-master"
+	"konservs/brilliant.framework": "dev-master",
+	"konservs/brilliant.portfolio": "dev-master"
 	},
 "autoload": {
 	"psr-4": {

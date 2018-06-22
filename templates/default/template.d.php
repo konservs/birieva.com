@@ -10,12 +10,58 @@ $bhtml->add_meta('viewport','width=device-width, initial-scale=1, maximum-scale=
 $bhtml->add_meta('','text/html; charset=utf-8','Content-Type');
 $bhtml->add_meta('','IE=edge','X-UA-Compatible');
 
+$bhtml->addCSS('/css/assets/normalize.css');
+$bhtml->addCSS('/css/assets/bootstrap.min.css');
+$bhtml->addCSS('/css/font-awesome.min.css');
+$bhtml->addCSS('/css/gallery/foundation.min.css');
+$bhtml->addCSS('/css/gallery/set1.css');
+$bhtml->addCSS('/css/main.css');
+$bhtml->addCSS('/css/responsive.css');
+
+$header_tag = 'h1';
+$menuActive = 'home';
 ?><!DOCTYPE html>
 <html class="no-js"  lang="en">
 <head>
 	<?php $bhtml->out_head();?>
 </head>
 <body lang="<?php echo(BLang::$langcode_web) ?>" itemscope itemtype="http://schema.org/WebPage">
+	<!-- header -->
+	<header id="header" class="header">
+		<div class="container-fluid">
+			<hgroup>
+			<!-- logo -->
+			<?php echo '<'.$header_tag.'>'; ?><a href="/" title="Olha Birieva — the photographer">Olha Birieva&nbsp;&ndash; the photographer</a><?php echo '</'.$header_tag.'>'; ?>
+                        <!-- logo -->
+                        <!-- nav -->
+                        <nav>
+                            <div class="menu-expanded">
+                            	<div class="nav-icon">
+                                	<div id="menu" class="menu"></div>
+                                    <p>menu</p>
+                                </div>
+                                <div class="cross">
+                                    <span class="linee linea1"></span>
+                                    <span class="linee linea2"></span>
+                                    <span class="linee linea3"></span>
+                                </div>
+
+                                <div class="main-menu">
+                                    <ul>
+                                        <li<?php echo($menuActive=='home'?' class="active"':''); ?>><a href="/">Home</a></li>
+                                        <li<?php echo($menuActive=='about'?' class="active"':''); ?>><a href="/about">About</a></li>
+                                        <li<?php echo($menuActive=='contact'?' class="active"':''); ?>><a href="/contact">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <!-- nav -->
+			</hgroup>
+		</div>
+	</header>
+
+	{{position:content}}
+
 	<!-- footer -->
 	<footer class="footer">
 		<h3>Stay connected with me</h3>
