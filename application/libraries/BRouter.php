@@ -99,9 +99,21 @@ class BRouter extends BRouterBase{
 				);
 			//$this->addFixedRules();
 			$this->rules[]=$this->maincom;
-			$this->softmodulesget('mainpage:mainpage');
+			//$this->softmodulesget('mainpage:mainpage');
 			return true;
 			}
+		if(count($f_path)==0||(count($f_path)==1&&$f_path[0]=='contact')){
+			$this->maincom=(object)array(
+				'com'=>'contacts',
+				'position'=>'content',
+				'segments'=>array('view'=>'contacts')
+				);
+			//$this->addFixedRules();
+			$this->rules[]=$this->maincom;
+			//$this->softmodulesget('mainpage:mainpage');
+			return true;
+			}
+
 		return false;
 		}//end of ParseURL
 	}

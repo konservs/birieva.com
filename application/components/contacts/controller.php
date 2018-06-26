@@ -1,13 +1,13 @@
 <?php
 /**
- * Main page
+ * Contacts page
  *
  * @author Andrii Biriev <a@konservs.com>
  * @copyright © Andrii Biriev, a@konservs.com, www.konservs.com
  */
 defined('BEXEC') or die('No direct access!');
 
-class Controller_mainpage extends \Brilliant\MVC\BController{
+class Controller_contacts extends \Brilliant\MVC\BController{
 	public function run($segments){
 		switch($segments['view']){
 			//Additional rules
@@ -19,13 +19,13 @@ class Controller_mainpage extends \Brilliant\MVC\BController{
 			default:
 				$model=$this->LoadModel($segments['view']);
 				if(empty($model))
-					return 'Mainpage: could not load model!';
+					return 'Contacts: could not load model!';
 				$view=$this->LoadView($segments['view']);
 				if(empty($view))
-					return 'Mainpage: could not load view!';
+					return 'Contacts: could not load view!';
 				return($view->generate($model->getData($segments)));
 				break;
 			}
-		return 'Mainpage: unknown params';
+		return 'Contacts: unknown params';
 		}
 	}
