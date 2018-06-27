@@ -113,8 +113,17 @@ class BRouter extends BRouterBase{
 			//$this->softmodulesget('mainpage:mainpage');
 			return true;
 			}
-
+		if(count($f_path)==0||(count($f_path)==1&&$f_path[0]=='about')){
+			$this->maincom=(object)array(
+				'com'=>'pages',
+				'position'=>'content',
+				'segments'=>array('view'=>'page','id'=>1)
+				);
+			//$this->addFixedRules();
+			$this->rules[]=$this->maincom;
+			//$this->softmodulesget('mainpage:mainpage');
+			return true;
+			}
 		return false;
 		}//end of ParseURL
 	}
-
